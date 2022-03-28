@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TB_CIDADE")
@@ -17,9 +19,11 @@ public class Cidade {
 	@Column(name = "ID_CIDADE")
 	private Long id;
 	
+	@NotEmpty(message =  "NOME DA CIDADE É OBRIGATÓRIO")
 	@Column(name = "NOME_CIDADE")
 	private String nome;
 	
+	@NotNull(message = "ESTADO É OBRIGATÓRIO")
 	@ManyToOne
 	@JoinColumn(name = "ID_ESTADO")
 	private Estado estado;

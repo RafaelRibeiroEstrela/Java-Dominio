@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "TB_ESTADO")
@@ -18,9 +19,11 @@ public class Estado implements Serializable{
 	@Column(name = "ID_ESTADO")
 	private Long id;
 	
+	@NotEmpty(message = "NOME DO ESTADO É OBRIGATÓRIO")
 	@Column(name = "NOME_ESTADO")
 	private String nome;
 	
+	@NotEmpty(message = "SIGLA DA UNIDADE FEDERATIVA É OBRIGATÓRIO")
 	@Column(name = "UNIDADE_FEDERATIVA")
 	private String unidadeFederativa;
 	
