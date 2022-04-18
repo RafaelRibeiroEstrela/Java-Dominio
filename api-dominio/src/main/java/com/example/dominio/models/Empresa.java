@@ -1,5 +1,5 @@
 package com.example.dominio.models;
 
-public class Endereco {
+public class Empresa {
 
 }
