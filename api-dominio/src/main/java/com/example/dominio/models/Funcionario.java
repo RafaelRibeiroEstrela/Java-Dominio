@@ -32,7 +32,7 @@ public class Funcionario implements Serializable{
 	@Column(name = "DATA_INGRESSO")
 	private String dataIngresso;
 	
-	@Column(name = "CTPS")
+	@Column(name = "PIS_PASEP")
 	private String ctps;
 	
 	@OneToOne
