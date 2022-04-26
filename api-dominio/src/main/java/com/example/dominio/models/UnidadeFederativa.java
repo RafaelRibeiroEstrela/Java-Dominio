@@ -14,14 +14,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DOMINIO.TB_UNIDADE_FEDERATIVA")
+@Table(name = "TB_UNIDADE_FEDERATIVA")
 public class UnidadeFederativa implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_UNIDADE_FEDERATIVA")
-	@SequenceGenerator(name = "SEQ_UNIDADE_FEDERATIVA", sequenceName = "DOMINIO.SEQ_UNIDADE_FEDERATIVA", allocationSize = 1)
+	@SequenceGenerator(name = "SEQ_UNIDADE_FEDERATIVA", sequenceName = "SEQ_UNIDADE_FEDERATIVA", allocationSize = 1)
 	@Column(name = "ID_UNIDADE_FEDERATIVA")
 	private Long id;
 	

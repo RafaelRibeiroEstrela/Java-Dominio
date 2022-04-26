@@ -12,14 +12,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DOMINIO.TB_CIDADE")
+@Table(name = "TB_CIDADE")
 public class Cidade implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CIDADE")
-	@SequenceGenerator(name = "SEQ_CIDADE", sequenceName = "DOMINIO.SEQ_CIDADE", allocationSize = 1)
+	@SequenceGenerator(name = "SEQ_CIDADE", sequenceName = "SEQ_CIDADE", allocationSize = 1)
 	@Column(name = "ID_CIDADE")
 	private Long id;
 	
@@ -29,15 +29,19 @@ public class Cidade implements Serializable{
 	@Column(name = "ID_UNIDADE_FEDERATIVA")
 	private UnidadeFederativa uf;
 	
+	@Column(name = "CODIGO_IBGE")
+	private Long codigo;
+	
 	public Cidade() {
 		
 	}
 
-	public Cidade(Long id, String nome, UnidadeFederativa uf) {
+	public Cidade(Long id, String nome, UnidadeFederativa uf, Long codigo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.uf = uf;
+		this.codigo = codigo;
 	}
 
 	public Long getId() {
@@ -64,6 +68,14 @@ public class Cidade implements Serializable{
 		this.uf = uf;
 	}
 
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -83,9 +95,9 @@ public class Cidade implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Cidade [id=" + id + ", nome=" + nome + ", uf=" + uf + "]";
+		return "Cidade [id=" + id + ", nome=" + nome + ", uf=" + uf + ", codigo=" + codigo + "]";
 	}
-	
+
 	
 	
 
