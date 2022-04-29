@@ -1,6 +1,7 @@
 package com.example.dominio.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -30,7 +31,7 @@ public class Funcionario implements Serializable{
 	private String matricula;
 	
 	@Column(name = "DATA_INGRESSO")
-	private String dataIngresso;
+	private LocalDate dataIngresso;
 	
 	@Column(name = "PIS_PASEP")
 	private String ctps;
@@ -51,7 +52,7 @@ public class Funcionario implements Serializable{
 		
 	}
 
-	public Funcionario(Long id, String matricula, String dataIngresso, String ctps, Pessoa pessoa, Setor setor, Cargo cargo) {
+	public Funcionario(Long id, String matricula, LocalDate dataIngresso, String ctps, Pessoa pessoa, Setor setor, Cargo cargo) {
 		super();
 		this.id = id;
 		this.matricula = matricula;
@@ -78,11 +79,11 @@ public class Funcionario implements Serializable{
 		this.matricula = matricula;
 	}
 
-	public String getDataIngresso() {
+	public LocalDate getDataIngresso() {
 		return dataIngresso;
 	}
 
-	public void setDataIngresso(String dataIngresso) {
+	public void setDataIngresso(LocalDate dataIngresso) {
 		this.dataIngresso = dataIngresso;
 	}
 
