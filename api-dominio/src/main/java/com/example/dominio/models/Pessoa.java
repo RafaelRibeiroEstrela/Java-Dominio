@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.example.dominio.models.enums.SexoEnum;
+
 @Entity
 @Table(name = "TB_PESSOA")
 public class Pessoa implements Serializable{
@@ -43,14 +45,14 @@ public class Pessoa implements Serializable{
 		
 	}
 
-	public Pessoa(Long id, String nome, String cpf, String rg, LocalDate dataNascimento, String sexo) {
+	public Pessoa(Long id, String nome, String cpf, String rg, LocalDate dataNascimento, SexoEnum sexo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.dataNascimento = dataNascimento;
-		this.sexo = sexo;
+		this.sexo = sexo.getDesc();
 	}
 
 	public Long getId() {
@@ -93,12 +95,12 @@ public class Pessoa implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getSexo() {
-		return sexo;
+	public SexoEnum getSexo() {
+		return SexoEnum.toEnum(sexo);
 	}
 
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	public void setSexo(SexoEnum sexo) {
+		this.sexo = sexo.getDesc();
 	}
 
 	@Override
