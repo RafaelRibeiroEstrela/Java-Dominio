@@ -14,17 +14,19 @@ public class StandardError implements Serializable{
 	private Integer status;
 	private String error;
 	private String path;
+	private String genericError;
 	
 	public StandardError() {
 		
 	}
 
-	public StandardError(LocalDateTime time, Integer status, String error, String path) {
+	public StandardError(LocalDateTime time, Integer status, String error, String path, String genericError) {
 		super();
 		this.time = time;
 		this.status = status;
 		this.error = error;
 		this.path = path;
+		this.genericError = genericError;
 	}
 
 	public LocalDateTime getTime() {
@@ -57,6 +59,14 @@ public class StandardError implements Serializable{
 
 	public void setPath(String path) {
 		this.path = path;
+	}
+
+	public String getGenericError() {
+		return genericError;
+	}
+
+	public void setGenericError(String genericError) {
+		this.genericError = genericError;
 	}
 
 }
