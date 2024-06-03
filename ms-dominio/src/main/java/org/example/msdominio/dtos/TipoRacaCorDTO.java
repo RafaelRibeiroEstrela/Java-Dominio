@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.example.msdominio.models.TipoRacaCor;
 
 import java.time.Instant;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
